@@ -29,7 +29,7 @@ def align_images(in_folder, out_folder):
 
         facial5points = landmarks[0]
 
-        warped_face = norm_crop(img, landmark=facial5points, createEvalDB=True)
+        warped_face, _ = norm_crop(img, landmark=facial5points, createEvalDB=True)
         cv2.imwrite(os.path.join(out_folder, img_name), warped_face)
 
     print(skipped_imgs)
